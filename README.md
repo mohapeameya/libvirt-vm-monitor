@@ -7,6 +7,14 @@ One Paragraph of project description goes here
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. <!-- See deployment for notes on how to deploy the project on a live system.-->
 
 ### Prerequisites
+Clone the repository to get a copy for yourself
+```
+$ git clone https://github.com/mohapeameya/libvirt-vm-monitor.git
+```
+Change current directory to ```libvirt-vm-monitor```
+```
+$ cd libvirt-vm-monitor
+```
 Install QEMU/libvirt/KVM on your system. Check out the following links for instructions:
 1. [KVM Installation for Ubuntu](https://help.ubuntu.com/community/KVM/Installation)
 2. [How to Install and Configure KVM on Ubuntu 18.04 LTS Server](https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/)
