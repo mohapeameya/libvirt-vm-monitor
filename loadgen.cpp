@@ -103,7 +103,7 @@ int connect_to_server(int *sockfd) {
     do {
         *sockfd = socket(AF_INET, SOCK_STREAM, 0);
     } while(*sockfd < 3);
-    server == NULL;
+    server = NULL;
 
     //////////////////// mutex to read from serv_ip array/////////////////////////////
     pthread_mutex_lock(&serv_ip_mutex);
@@ -180,7 +180,7 @@ int disconnect(int *sockfd) {
 int create_update(int *sockfd, int cmd) {
     char buf[2];
     int n;
-    int value_len;
+    // int value_len;
     int key_len;
     int value_size_len;
     int size;
@@ -466,7 +466,7 @@ int read_delete(int *sockfd, int cmd){
 void *run_worker_thread(void * worker_argv){
     int *data = (int *)worker_argv;
     int time_in_sec = data[0];
-    int thread_id = data[1];
+    // int thread_id = data[1];
 
     long            ns; // Nanoseconds
     time_t          cur_time_s;  // Seconds
@@ -556,6 +556,7 @@ void *run_worker_thread(void * worker_argv){
     total_res = total_res + res_count;
     totalTime = totalTime + (((double)(t2 - t1))/CLOCKS_PER_SEC)/res_count;
     pthread_mutex_unlock(&req_mutex);
+    return NULL;
 }
 
 void run_mode(int time_in_sec, int no_workers, ofstream& logFile){
