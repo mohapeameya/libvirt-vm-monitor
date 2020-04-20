@@ -66,12 +66,13 @@ int front, rear;
 
 void *accept_conn(void *array) {
     int *data = (int *)array;
-    int thread_id, portno;
-    thread_id = data[0];
+    // int thread_id;
+    int portno;
+    // thread_id = data[0];
     portno = data[1];
 
     while(true) {
-        int i, n, one = 1;
+        int one = 1;
         int sockfd, newsockfd;
         socklen_t clilen;
         struct sockaddr_in serv_addr, cli_addr;
@@ -124,17 +125,17 @@ void *accept_conn(void *array) {
 }
 
 void *process_conn(void *data) {
-    int thread_id = *((int *)data);
+    // int thread_id = *((int *)data);
     int max_value_size;
     int newsockfd = 0;
-    int local_rear;
+    // int local_rear;
     while(true) {
         pthread_mutex_lock(&fd_mutex);
         while(rear == front) {
             //printf("thread %d sleeping\n",thread_id);
             pthread_cond_wait(&full, &fd_mutex);//wait on full as no slot is filled till master fills next slot
         }
-        local_rear = rear;
+        // local_rear = rear;
         newsockfd = fd_buffer[rear];
         fd_buffer[rear] = -1;
         rear = ( rear + 1 ) % BUFFER_SIZE;
