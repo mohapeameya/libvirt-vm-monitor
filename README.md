@@ -29,7 +29,7 @@ $ sudo apt install libosinfo-bin -y
 $ sudo apt install libguestfs-tools -y
 $ sudo apt install python3 -y
 $ sudo apt install python-tk -y
-$ pip3 install python-libvirt matplotlib -y
+$ pip3 install python-libvirt matplotlib
 ```
 
 
