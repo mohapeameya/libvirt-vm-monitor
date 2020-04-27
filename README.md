@@ -22,7 +22,7 @@ Install QEMU/libvirt/KVM on your system. Check out the following links for instr
 Install the following dependencies if not already installed:
 ```
 $ sudo apt install qemu qemu-kvm -y
-$ sudo apt install libvirt-daemon-system libvirt-clients libvirt-bin libvirt-dev
+$ sudo apt install libvirt-daemon-system libvirt-clients libvirt-bin libvirt-dev -y
 $ sudo apt install virt-top -y
 $ sudo apt install bridge-utils virt-manager -y
 $ sudo apt install libosinfo-bin -y
